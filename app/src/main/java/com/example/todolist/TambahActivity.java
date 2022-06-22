@@ -25,6 +25,8 @@ public class TambahActivity extends AppCompatActivity {
         etTask = findViewById(R.id.task);
         btnSave = findViewById(R.id.btnSave);
 
+        getSupportActionBar().setTitle("Tambah Task");
+
         myDb = new DatabaseHelper(getApplicationContext());
 
         btnSave.setOnClickListener(new View.OnClickListener() {

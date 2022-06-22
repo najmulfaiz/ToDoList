@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.todolist.MainActivity">
+
+    <item
+        android:orderInCategory="40"
+        android:title="Logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:id="@+id/btnLogout"
+        app:showAsAction="always" />
+</menu>

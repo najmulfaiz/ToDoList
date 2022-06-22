@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvTitle"
-        android:text="ToDoList"
-        android:textSize="32sp"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Theme.ToDoList.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.ToDoList.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyvlerView"
-        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:nestedScrollingEnabled="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
         android:id="@+id/fab"
-        android:src="@drawable/ic_baseline_done_all_24"
+        android:src="@drawable/ic_baseline_add_24"
         android:layout_margin="30dp" />
 
 
 <!--    <Button-->
 <!--        android:id="@+id/btnLogout"-->
-<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_below="@id/recyvlerView"-->
 <!--        android:text="Logout"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintHorizontal_bias="0.5"-->
 <!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

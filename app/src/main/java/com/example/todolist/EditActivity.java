@@ -25,7 +25,7 @@ public class EditActivity extends AppCompatActivity {
         task = findViewById(R.id.task);
         btnUpdate = findViewById(R.id.btnUpdate);
 
-//        getSupportActionBar().setTitle("Edit Data : " + getIntent().getStringExtra("nama"));
+        getSupportActionBar().setTitle("Edit Task");
 
         task.setText(getIntent().getStringExtra("TASK"));
 

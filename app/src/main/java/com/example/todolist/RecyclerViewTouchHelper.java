@@ -25,9 +25,8 @@ public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     private ToDoAdapter adapter;
     private Context context;
-    private List<ToDoModel> mList;
 
-    public RecyclerViewTouchHelper(Context context, ToDoAdapter adapter) {
+    public RecyclerViewTouchHelper(Context context, ToDoAdapter adapter, List<ToDoModel> mList) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
         this.context = context;
@@ -67,13 +66,12 @@ public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState,
                 isCurrentlyActive)
                 .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext() , R.color.colorPrimaryDark))
-                .addSwipeLeftActionIcon(R.drawable.ic_baseline_done_all_24)
+                .addSwipeLeftActionIcon(R.drawable.ic_baseline_edit_24)
                 .addSwipeRightBackgroundColor(Color.RED)
-                .addSwipeRightActionIcon(R.drawable.ic_baseline_done_all_24)
+                .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_24)
                 .create()
                 .decorate();
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
